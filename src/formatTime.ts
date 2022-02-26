@@ -1,7 +1,5 @@
 import { format, formatDistanceToNow } from 'date-fns';
 
-// ----------------------------------------------------------------------
-
 declare type DateType = string | number | Date;
 
 export function fDate(date: DateType) {

@@ -1,5 +1,22 @@
-import type { RetryOptions } from 'src/types'
+export interface RetryOptions {
+  /**
+   * Number of attempts to process when function execution fails
+   */
+  retries?: number;
 
+  /**
+   * Interval between 2 attempts
+   */
+  interval?: number;
+  backoffFactor?: number;
+}
+
+/**
+ * Make a pause in an async context
+ * 
+ * @param duration 
+ * @returns 
+ */
 export const wait = (duration: number) => new Promise((resolve) => setTimeout(resolve, duration));
 
 const defaultRetryOptions = {
@@ -20,6 +37,13 @@ const onlyDefined = (values: Record<string, any>): Record<string, any> => Object
   }, {}
 );
 
+/**
+ * Implementing a basic retrial flow
+ * 
+ * @param fn 
+ * @param o 
+ * @returns 
+ */
 export const retry = <T extends unknown>(
   fn: () => Promise<T>,
   o?: RetryOptions
@@ -45,7 +69,14 @@ export const retry = <T extends unknown>(
     });
 });
 
-export const promiseAllStepN = <T extends unknown>(n: number, list: any[]) => {
+/**
+ * Execute in parallel a set of batch function
+ * 
+ * @param n 
+ * @param list 
+ * @returns 
+ */
+export const promiseAllStepN = <T extends unknown>(n: number, list: any[]): Promise<T[]> => {
   if (list.length === 0) {
     return Promise.resolve([]);
   }

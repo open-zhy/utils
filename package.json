@@ -1,6 +1,6 @@
 {
   "name": "@open-zhy/utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utilities for typescript frontend development",
   "keywords": [
     "utilities"

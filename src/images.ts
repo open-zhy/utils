@@ -29,6 +29,13 @@ export const defaultCliperFactory = (...CANVAS_SIZE: number[]) => (
   );
 };
 
+/**
+ * Clip avatar to square
+ * 
+ * @param file 
+ * @param sz 
+ * @returns 
+ */
 export const clipAvatar = (file: File, sz: number) => new Promise<{data: string; image: HTMLImageElement}>(
   (resolve) => {
     const cliper = defaultCliperFactory(sz);
@@ -52,6 +59,13 @@ export const clipAvatar = (file: File, sz: number) => new Promise<{data: string;
   }
 );
 
+/**
+ * Clip cover image to a rectangle
+ * 
+ * @param file 
+ * @param sz 
+ * @returns 
+ */
 export const clipCover = (file: File, sz: number[]) => new Promise<{data: string; image: HTMLImageElement}>(
   (resolve) => {
     const r0 = sz[0] / (sz[1] || sz[0]);
@@ -85,7 +99,7 @@ export const clipCover = (file: File, sz: number[]) => new Promise<{data: string
 
       const data = await cliper(img, x, y, ...size);
 
-      return resolve({ image: img, data });
+      return resolve({ data, image: img });
     };
   }
 );

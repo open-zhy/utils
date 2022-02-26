@@ -1,9 +1,15 @@
-/* eslint-disable  */
 /**
-* MD5 (Message-Digest Algorithm)
-* http://www.webtoolkit.info/
-* */
-
+ * Calculate md5 value of a string
+ * --------------------------------------------------
+ * 
+ * MD5 (Message-Digest Algorithm)
+ * http://www.webtoolkit.info/
+ * 
+ * --------------------------------------------------
+ * 
+ * @param strValue 
+ * @returns 
+ */
 export function md5(strValue: string) {
   function RotateLeft(lValue: number, iShiftBits: number) {
     return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
