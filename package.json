@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "rollup": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"[Warning] no test yet\" && exit 0"
   },
   "homepage": "https://github.com/open-zhy/utils#readme",
   "repository": {
