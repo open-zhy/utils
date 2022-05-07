@@ -9,3 +9,4 @@ export * from './storage';
 export * from './device';
 export * from './string';
 export * from './waitable';
+export * from './md5';
