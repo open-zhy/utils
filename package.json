@@ -1,10 +1,11 @@
 {
   "name": "@open-zhy/utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Utilities for typescript frontend development",
   "keywords": [
     "utilities"
   ],
+  "private": false,
   "author": "Irzhy Ranaivoarivony",
   "license": "MIT",
   "scripts": {
@@ -23,7 +24,8 @@
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/open-zhy"
+    "registry": "https://registry.npmjs.org/open-zhy",
+    "access": "public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.2",
