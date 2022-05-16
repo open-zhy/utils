@@ -5,7 +5,7 @@
  * @param decimals 
  * @returns 
  */
-const bytesToSize = (bytes: number, decimals = 2): string => {
+export const bytesToSize = (bytes: number, decimals = 2): string => {
   if (bytes === 0) {
     return '0 Bytes';
   }
@@ -17,5 +17,3 @@ const bytesToSize = (bytes: number, decimals = 2): string => {
 
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 };
-
-export default bytesToSize;
